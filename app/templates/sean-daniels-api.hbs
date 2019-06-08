@@ -1,0 +1,27 @@
+
+<h1>JSON Table</h1>
+
+<div class="items">
+    <div class="items__single items__heading">
+        <div class="single__info">USER ID</div>
+        <div class="single__info">ID</div>
+        <div class="single__info">TITLE</div>
+        <div class="single__info">BODY</div>
+    </div>
+{{#each this.model as |item|}}
+    <div class="items__single">
+        <div class="single__info single__user">{{item.userId}}</div>
+        <div class="single__info single__id">{{item.id}}</div>
+        <div class="single__info single__title">{{item.title}}</div>
+        <div class="single__info single__body">{{item.body}}</div>
+    </div>
+{{/each}}
+</div>
+<!--
+<ul>
+  {{#each this.model as |scientist|}}
+    <li>{{scientist}}</li>
+  {{/each}}
+</ul>
+<PeopleList @title="List of Scientists" @people={{this.model}} />
+-->

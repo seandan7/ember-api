@@ -1,0 +1,11 @@
+.items__single {
+    @media (min-width: 768px) {
+        display: flex;
+    }
+}
+.single__info {
+    margin: 20px 0;
+    @media (min-width: 768px) {
+        width: 33.333333%;
+    }
+}
