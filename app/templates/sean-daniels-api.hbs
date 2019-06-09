@@ -14,14 +14,13 @@
         <div id="modal">
             <span class="modal__close" {{action "closeModal"}}>X</span>
             <div class="modal-content">
-                <div>User Name: <span id="modal__name"></span></div>
-                <div>User Email: <span id="modal__email"></span></div>
-                <div id="modal__link"></div>
-                <div>Full Post: <span id="modal__post"></span></div>
-                User Location: <div id="modal__location"></div>
+                <div class="modal__row">User Name: <span id="modal__name"></span></div>
+                <div class="modal__row">User Email: <span id="modal__email"></span></div>
+                <div class="modal__row" id="modal__link"></div>
+                <div class="modal__row">Full Post: <span id="modal__post"></span></div>
+                
             </div>
-            <span class="modal-arrow left" {{action "getPreviousPost" item.userId item.body}}>Previous</span>
-            <span class="modal-arrow right" {{action "getNextPost" item.userId item.body}}>Next</span>
+            
         </div>
 
         {{#each model as |item|}}

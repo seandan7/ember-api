@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
                 document.getElementById('modal__name').textContent = response.name;
                 document.getElementById('modal__email').textContent = response.email;
                 document.getElementById('modal__link').innerHTML = '<a href="https://' + response.website + '">Website</a>';
-                document.getElementById("modal__location").innerHTML = '<div style="width: 100%"><iframe width="100%" height="200" src="https://maps.google.com/maps?width=100%&height=200&hl=en&coord=' + response.address.geo.lat + ',' + response.address.geo.lng + '&ie=UTF8&t=&z=14&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><br />';
+
                 document.getElementById('modal__post').textContent = fullPost;
 
                 document.getElementById("modal").classList.add("show");
