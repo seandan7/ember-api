@@ -1,22 +1,39 @@
+<div class="container">
+    <h1>JSON Table</h1>
+    <button {{action 'nextPage' model.length}}>Next</button>
+    <button {{action 'previousPage'}}>Previous</button>
+    Current Page:{{page}}
+    <hr />
+    Tasks: {{model.length}}
+    <div class="items">
+        <div class="items__single items__heading show-desktop">
+            <div class="single__info single__id">ID</div>
+            <div class="single__info single__user">USER ID</div>
+            <div class="single__info single__title">TITLE</div>
+        </div>
+        <div id="modal">
+            <span class="close" {{action "closeModal"}}>X</span>
+            <div class="modal-content">
+                <div>User Name: <span id="modal__name"></span></div>
+                <div>User Email: <span id="modal__email"></span></div>
+                <div id="modal__link"></div>
+                <div>Full Post: <span id="modal__post"></span></div>
+                User Location: <div id="modal__location"></div>
+            </div>
+        </div>
 
-<h1>JSON Table</h1>
-
-<div class="items">
-    <div class="items__single items__heading">
-        <div class="single__info">USER ID</div>
-        <div class="single__info">ID</div>
-        <div class="single__info">TITLE</div>
-        <div class="single__info">BODY</div>
+        {{#each model as |item|}}
+        <div class="items__single" {{action "showPerson" item.userId item.body}}>
+            <div class="single__info single__id"><span class="show-mobile"><b>ITEM ID: </b></span>{{item.id}}</div>
+            <div class="single__info single__user"><span class="show-mobile"><b>USER ID: </b></span>{{item.userId}}
+            </div>
+            <div class="single__info single__title"><span class="show-mobile"><b>ITEM TITLE: </b></span>{{item.title}}
+            </div>
+        </div>
+        {{/each}}
     </div>
-{{#each this.model as |item|}}
-    <div class="items__single">
-        <div class="single__info single__user">{{item.userId}}</div>
-        <div class="single__info single__id">{{item.id}}</div>
-        <div class="single__info single__title">{{item.title}}</div>
-        <div class="single__info single__body">{{item.body}}</div>
-    </div>
-{{/each}}
 </div>
+
 <!--
 <ul>
   {{#each this.model as |scientist|}}
