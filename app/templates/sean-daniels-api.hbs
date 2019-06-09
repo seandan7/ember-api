@@ -23,7 +23,7 @@
         </div>
 
         {{#each model as |item|}}
-        {{#if this.page item.pageToShowOn }}
+        {{#if (eq page item.pageToShowOn) }}
         <div class="items__single" {{action "showPerson" item.userId item.body}}>
             <div class="single__info single__id"><span class="show-mobile"><b>ITEM ID: </b></span>{{item.id}}</div>
             <div class="single__info single__user"><span class="show-mobile"><b>USER ID: </b></span>{{item.userId}}

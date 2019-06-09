@@ -16,7 +16,6 @@ export default Ember.Route.extend({
                     pageNumber++;
                 }
             }
-            console.log(response);
             return response;
         });
     }
