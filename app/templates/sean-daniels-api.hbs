@@ -1,7 +1,7 @@
 <div class="container">
     <h1>JSON Table</h1>
-    <button {{action 'nextPage' model.length}}>Next</button>
     <button {{action 'previousPage'}}>Previous</button>
+    <button {{action 'nextPage' model.length}}>Next</button>
     Current Page:{{page}}
     <hr />
     Tasks: {{model.length}}
@@ -12,7 +12,7 @@
             <div class="single__info single__title">TITLE</div>
         </div>
         <div id="modal">
-            <span class="close" {{action "closeModal"}}>X</span>
+            <span class="modal__close" {{action "closeModal"}}>X</span>
             <div class="modal-content">
                 <div>User Name: <span id="modal__name"></span></div>
                 <div>User Email: <span id="modal__email"></span></div>
@@ -20,6 +20,8 @@
                 <div>Full Post: <span id="modal__post"></span></div>
                 User Location: <div id="modal__location"></div>
             </div>
+            <span class="modal-arrow left" {{action "getPreviousPost" item.userId item.body}}>Previous</span>
+            <span class="modal-arrow right" {{action "getNextPost" item.userId item.body}}>Next</span>
         </div>
 
         {{#each model as |item|}}

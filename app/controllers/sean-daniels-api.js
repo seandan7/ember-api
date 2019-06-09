@@ -23,9 +23,8 @@ export default Ember.Controller.extend({
         },
         nextPage: function (modelLength) {
 
-            if (this.page > modelLength / this.limit - 1) {
+            if (this.page > modelLength / this.limit - 2) {
                 alert("You've gone too far");
-                this.set('page',modelLength / this.limit - 1)
             } else {
                 this.set('page', this.get('page') + 1);
             }
