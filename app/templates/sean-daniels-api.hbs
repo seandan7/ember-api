@@ -14,10 +14,11 @@
         <div id="modal">
             <span class="modal__close" {{action "closeModal"}}>X</span>
             <div class="modal-content">
-                <div class="modal__row">User Name: <span id="modal__name"></span></div>
-                <div class="modal__row">User Email: <span id="modal__email"></span></div>
+                <div class="modal__row"><b>User Name: </b><span id="modal__name"></span></div>
+                <div class="modal__row"><b>User Email: </b><span id="modal__email"></span></div>
+                <div class="modal__row"><b>User Phone:</b> <span id="modal__phone"></span></div>
                 <div class="modal__row" id="modal__link"></div>
-                <div class="modal__row">Full Post: <span id="modal__post"></span></div>
+                <div class="modal__row"><b>Full Post: </b><span id="modal__post"></span></div>
                 
             </div>
             
@@ -36,12 +37,3 @@
         {{/each}}
     </div>
 </div>
-
-<!--
-<ul>
-  {{#each this.model as |scientist|}}
-    <li>{{scientist}}</li>
-  {{/each}}
-</ul>
-<PeopleList @title="List of Scientists" @people={{this.model}} />
--->

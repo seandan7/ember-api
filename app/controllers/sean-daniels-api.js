@@ -12,7 +12,8 @@ export default Ember.Controller.extend({
                 document.getElementById('modal__name').textContent = response.name;
                 document.getElementById('modal__email').textContent = response.email;
                 document.getElementById('modal__link').innerHTML = '<a href="https://' + response.website + '">Website</a>';
-
+                document.getElementById('modal__phone').textContent = response.phone;
+                
                 document.getElementById('modal__post').textContent = fullPost;
 
                 document.getElementById("modal").classList.add("show");

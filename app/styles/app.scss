@@ -22,30 +22,39 @@
         display: inherit;
     }
 }
-.show {
-    display: inherit !important;
-}
+
 #modal {
     display: none;
     position: fixed;
     z-index: 1;
+    left: 10px;
     top: 10px;
-    left: -500px;
-    width: 500px;
+    
     max-width: 100%;
     background: lightgrey;
     color: #000;
     border: 1px solid #000;
     padding: 10px 30px;
-    
+    .modal__row {
+        margin: 5px 0;
+    }
     iframe {
         max-width: 100%;
     }
+    &.show {
+        display: inherit;
+    }
     @media (min-width: 768px) {
-        transition: left .25s ease;
+        transition: left .25s ease, opacity .25s ease;
         top: calc(50% - 400px);
+        left: -700px;
+        opacity: 0;
+        display: inherit;
+        width: 500px;
         &.show {
+            display: inherit;
             left: calc(50% - 250px);
+            opacity: 1 !important;
         }
     }
     
